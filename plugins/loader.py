@@ -2,7 +2,6 @@ import importlib
 import pkgutil
 from types import ModuleType
 from typing import List
-from pathlib import Path
 
 
 def load_plugins(package: str) -> List[ModuleType]:

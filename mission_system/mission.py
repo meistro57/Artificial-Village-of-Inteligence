@@ -1,5 +1,6 @@
 from typing import List, Any, Optional
 
+
 class Mission:
     def __init__(self, tasks: List[str]):
         self.tasks = tasks
