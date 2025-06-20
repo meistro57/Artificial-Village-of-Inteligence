@@ -1,5 +1,12 @@
+from __future__ import annotations
+
 import uuid
-from typing import Any
+from typing import Any, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from memory.storage import Memory
+    from mission_system.mission import Mission
+
 
 class Agent:
     """Base class for all agents."""

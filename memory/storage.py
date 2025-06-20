@@ -2,7 +2,9 @@ import sqlite3
 from pathlib import Path
 from typing import Any, Optional
 
+
 DB_FILE = Path(__file__).resolve().parent / "memory.db"
+
 
 class Memory:
     def __init__(self, db_path: Path = DB_FILE):
@@ -12,7 +14,10 @@ class Memory:
     def _ensure_table(self) -> None:
         cur = self.conn.cursor()
         cur.execute(
-            "CREATE TABLE IF NOT EXISTS memory (key TEXT PRIMARY KEY, value TEXT)"
+            (
+                "CREATE TABLE IF NOT EXISTS memory "
+                "(key TEXT PRIMARY KEY, value TEXT)"
+            )
         )
         self.conn.commit()
 
