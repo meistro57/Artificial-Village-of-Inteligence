@@ -17,7 +17,7 @@ Imagine a self-sustaining village, but instead of humans, it's populated by AI a
 This is the foundation of a sandbox-style ecosystem for intelligent agents. We’re building:
 
 - 🧱 Modular agent architecture (Builder, Thinker, Artist, Guardian, etc.)
-- 🧬 Persistent memory using MySQL, Redis, or vector DBs
+- 🧬 Persistent memory using SQLite (with future support for MySQL or Redis)
 - 📚 Local knowledge base + self-learning loop
 - ⚙️ Event-driven behaviors, mission triggers, and growth protocols
 - 🧩 Plugin-ready system to add roles, logic, and behavior profiles
@@ -29,19 +29,36 @@ This is the foundation of a sandbox-style ecosystem for intelligent agents. We�
 - **Mission system** for structured growth and experimentation
 - **Failsafe guardian logic** to ensure ethical growth and avoid runaway behavior
 
-## 🔧 Tech Stack (Planned)
+## 🔧 Tech Stack (Initial Implementation)
 
-- Python + LM Studio / OpenAI API / Ollama
-- Flask or FastAPI (Web controls and mission center)
-- MySQL (Core memory) + optional Redis
-- Node-RED (for real-time agent monitoring and flow control)
-- WebSocket / Terminal UI for live interaction
+- Python 3 (no external dependencies except `pytest` for tests)
+- SQLite for persistent memory
+- Simple plugin loader for extensibility
 
-## 👨‍🏫 Who's Building This?
+## ▶️ Running the Demo
 
-Created by [meistro57](https://github.com/meistro57), visionary, steel wizard, creative AI tamer, and fabricator of worlds both digital and dimensional.
+1. Install dependencies (for testing):
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Run the demo script:
+
+   ```bash
+   python main.py
+   ```
+
+The demo spawns four agents—Builder, Thinker, Artist, and Guardian—who work together on a simple mission. Results are printed to the console and stored in a local SQLite database (`memory/memory.db`).
+
+## 🧪 Running Tests
+
+This project uses `pytest` for a minimal test suite:
+
+```bash
+pytest
+```
 
 ---
 
 > *This repo is in its primordial phase. Come back often, or contribute. The village is just beginning to awaken...*
-
