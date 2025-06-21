@@ -35,6 +35,14 @@ This is the foundation of a sandbox-style ecosystem for intelligent agents. We�
 - SQLite for persistent memory
 - Simple plugin loader for extensibility
 
+## 🛠️ Ubuntu Installation
+
+Run the provided `install.sh` script to set up a Python virtual environment and install dependencies. The script also executes the test suite to verify the installation.
+
+```bash
+bash install.sh
+```
+
 ## ▶️ Running the Demo
 
 1. Install dependencies (for testing):
