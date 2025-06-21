@@ -1,3 +1,5 @@
 __pycache__/
 memory/memory.db
 *.pyc
+.venv/
+.pytest_cache/
