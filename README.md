@@ -57,7 +57,13 @@ bash install.sh
    python main.py
    ```
 
-The demo spawns five agents—Builder, Thinker, Artist, Guardian, and Trainer—who work together on a simple mission. Results are printed to the console and stored in a local SQLite database (`memory/memory.db`). The Trainer agent also records learned facts in the in-memory knowledge base.
+3. Run the extended demo (takes longer to complete):
+
+   ```bash
+   python long_demo.py
+   ```
+
+The demo spawns five agents—Builder, Thinker, Artist, Guardian, and Trainer—who work together on a simple mission. Results are printed to the console and stored in a local SQLite database (`memory/memory.db`). The Trainer agent also records learned facts in the in-memory knowledge base. The extended demo runs through 20 tasks with a short delay after each agent action to make the process take noticeably longer.
 
 ## 🧪 Running Tests
 
