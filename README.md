@@ -49,7 +49,7 @@ This is the foundation of a sandbox-style ecosystem for intelligent agents. We�
    python main.py
    ```
 
-The demo spawns four agents—Builder, Thinker, Artist, and Guardian—who work together on a simple mission. Results are printed to the console and stored in a local SQLite database (`memory/memory.db`).
+The demo spawns five agents—Builder, Thinker, Artist, Guardian, and Trainer—who work together on a simple mission. Results are printed to the console and stored in a local SQLite database (`memory/memory.db`). The Trainer agent also records learned facts in the in-memory knowledge base.
 
 ## 🧪 Running Tests
 
