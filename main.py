@@ -1,3 +1,5 @@
+import argparse
+
 from agents.builder import BuilderAgent
 from agents.thinker import ThinkerAgent
 from agents.artist import ArtistAgent
@@ -9,6 +11,10 @@ from mission_system.mission import Mission
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Run a short mission")
+    parser.add_argument("-v", "--verbose", action="store_true", help="enable verbose output")
+    args = parser.parse_args()
+
     memory = Memory()
     kb = KnowledgeBase()
     agents = [
@@ -18,6 +24,9 @@ def main():
         GuardianAgent("Guardian", memory),
         TrainerAgent("Trainer", memory, kb),
     ]
+    for agent in agents:
+        agent.verbose = args.verbose
+
     mission = Mission([
         "design module",
         "analyze requirements",

@@ -1,4 +1,5 @@
 import time
+import argparse
 
 from agents.builder import BuilderAgent
 from agents.thinker import ThinkerAgent
@@ -12,6 +13,10 @@ from mission_system.mission import Mission
 
 def main():
     """Run a longer mission demo to showcase agent collaboration."""
+    parser = argparse.ArgumentParser(description="Run an extended mission demo")
+    parser.add_argument("-v", "--verbose", action="store_true", help="enable verbose output")
+    args = parser.parse_args()
+
     memory = Memory()
     kb = KnowledgeBase()
     agents = [
@@ -26,6 +31,8 @@ def main():
     tasks = [
         f"task {i}" for i in range(1, 21)
     ]
+    for agent in agents:
+        agent.verbose = args.verbose
     mission = Mission(tasks)
 
     while not mission.is_finished():
