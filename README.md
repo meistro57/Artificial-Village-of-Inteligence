@@ -63,6 +63,12 @@ bash install.sh
    python long_demo.py
    ```
 
+4. Try the sample demo with progress output:
+
+   ```bash
+   python demo_sample.py -v
+   ```
+
 The demo spawns five agents—Builder, Thinker, Artist, Guardian, and Trainer—who work together on a simple mission. Results are printed to the console and stored in a local SQLite database (`memory/memory.db`). The Trainer agent also records learned facts in the in-memory knowledge base. The extended demo runs through 20 tasks with a short delay after each agent action to make the process take noticeably longer.
 
 ## 🧪 Running Tests

@@ -16,3 +16,9 @@ class Mission:
 
     def is_finished(self) -> bool:
         return not self.tasks
+
+    def progress_summary(self) -> str:
+        """Return a human readable summary of mission progress."""
+        total = len(self.completed) + len(self.tasks)
+        completed = len(self.completed)
+        return f"{completed}/{total} tasks completed"
