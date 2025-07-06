@@ -13,7 +13,12 @@ from mission_system.mission import Mission
 def main():
     """Run a very small demo mission."""
     parser = argparse.ArgumentParser(description="Run a sample mission")
-    parser.add_argument("-v", "--verbose", action="store_true", help="enable verbose output")
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="enable verbose output",
+    )
     args = parser.parse_args()
 
     memory = Memory()
