@@ -13,8 +13,15 @@ from mission_system.mission import Mission
 
 def main():
     """Run a longer mission demo to showcase agent collaboration."""
-    parser = argparse.ArgumentParser(description="Run an extended mission demo")
-    parser.add_argument("-v", "--verbose", action="store_true", help="enable verbose output")
+    parser = argparse.ArgumentParser(
+        description="Run an extended mission demo"
+    )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="enable verbose output",
+    )
     args = parser.parse_args()
 
     memory = Memory()
