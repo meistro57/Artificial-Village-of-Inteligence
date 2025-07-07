@@ -85,8 +85,19 @@ The `ThinkerAgent` uses the [Ollama](https://ollama.com) service for language
 generation. Make sure the Ollama server is running and that you have pulled a
 model, for example:
 
+
 ```bash
 ollama pull llama3
+ollama serve &  # start the Ollama server in the background
+```
+
+By default the Thinker agent uses the model specified in the ``OLLAMA_MODEL``
+environment variable (``llama3`` if unset). You can override it when launching
+the application:
+
+```bash
+export OLLAMA_MODEL=mistral
+python main.py
 ```
 
 Without Ollama running, the Thinker agent will return an error message in place
