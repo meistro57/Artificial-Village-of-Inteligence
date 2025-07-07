@@ -28,7 +28,7 @@ def main(verbose: bool = False, sleep: float = 5.0) -> None:
     kb = KnowledgeBase()
     agents = [
         BuilderAgent("Builder", memory),
-        ThinkerAgent("Thinker", memory),
+        ThinkerAgent("Thinker", memory, model="llama3"),
         ArtistAgent("Artist", memory),
         GuardianAgent("Guardian", memory),
         TrainerAgent("Trainer", memory, kb),

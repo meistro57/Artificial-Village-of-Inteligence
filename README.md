@@ -34,6 +34,7 @@ This is the foundation of a sandbox-style ecosystem for intelligent agents. We�
 - Python 3 (no external dependencies except `pytest` for tests)
 - SQLite for persistent memory
 - Simple plugin loader for extensibility
+- [Ollama](https://ollama.com) for local LLM interaction (uses the `llama3` model by default)
 
 ## 🛠️ Ubuntu Installation
 
@@ -77,6 +78,19 @@ bash install.sh
 
    This script runs missions in an endless loop, creating a new set of tasks on
    each iteration. Stop it with `Ctrl+C`.
+
+### Ollama Support
+
+The `ThinkerAgent` uses the [Ollama](https://ollama.com) service for language
+generation. Make sure the Ollama server is running and that you have pulled a
+model, for example:
+
+```bash
+ollama pull llama3
+```
+
+Without Ollama running, the Thinker agent will return an error message in place
+of a response.
 
 The demo spawns five agents—Builder, Thinker, Artist, Guardian, and Trainer—who work together on a simple mission. Results are printed to the console and stored in a local SQLite database (`memory/memory.db`). The Trainer agent also records learned facts in the in-memory knowledge base. The extended demo runs through 20 tasks with a short delay after each agent action to make the process take noticeably longer.
 
