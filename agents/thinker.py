@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING
 
 from .base import Agent
-from llm.ollama_client import generate_response
+from llm.ollama_client import DEFAULT_MODEL, generate_response
 
 if TYPE_CHECKING:
     from memory.storage import Memory
@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 class ThinkerAgent(Agent):
     """Agent that reasons about a task using an LLM via Ollama."""
 
-    def __init__(self, name: str, memory: "Memory", model: str = "llama3"):
+    def __init__(self, name: str, memory: "Memory", model: str = DEFAULT_MODEL):
         super().__init__(name, memory)
         self.model = model
 
