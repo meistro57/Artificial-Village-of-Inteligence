@@ -69,6 +69,15 @@ bash install.sh
    python demo_sample.py -v
    ```
 
+5. Run continuously with evolving tasks:
+
+   ```bash
+   python auto_run.py -v
+   ```
+
+   This script runs missions in an endless loop, creating a new set of tasks on
+   each iteration. Stop it with `Ctrl+C`.
+
 The demo spawns five agents—Builder, Thinker, Artist, Guardian, and Trainer—who work together on a simple mission. Results are printed to the console and stored in a local SQLite database (`memory/memory.db`). The Trainer agent also records learned facts in the in-memory knowledge base. The extended demo runs through 20 tasks with a short delay after each agent action to make the process take noticeably longer.
 
 ## 🧪 Running Tests
