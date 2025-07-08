@@ -25,3 +25,7 @@ class Mission:
         total = len(self.completed) + len(self.tasks)
         completed = len(self.completed)
         return f"{completed}/{total} tasks completed"
+
+    def get_remaining_tasks(self) -> List[str]:
+        """Return a copy of the remaining tasks."""
+        return list(self.tasks)
