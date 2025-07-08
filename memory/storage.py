@@ -40,6 +40,12 @@ class Memory:
         cur.execute("DELETE FROM memory WHERE key = ?", (key,))
         self.conn.commit()
 
+    def clear(self) -> None:
+        """Remove all key/value pairs from memory."""
+        cur = self.conn.cursor()
+        cur.execute("DELETE FROM memory")
+        self.conn.commit()
+
     def keys(self) -> list[str]:
         """Return a list of all stored keys."""
         cur = self.conn.cursor()
