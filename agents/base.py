@@ -38,6 +38,11 @@ class Agent:
     def recall(self, key: str) -> Any:
         return self.memory.get(f"{self.id}:{key}")
 
+    def get_memory_keys(self) -> list[str]:
+        """Return all memory keys stored for this agent."""
+        prefix = f"{self.id}:"
+        return [k[len(prefix):] for k in self.memory.keys() if k.startswith(prefix)]
+
     def act(self, mission: 'Mission') -> None:
         """Perform a single step for the mission."""
         task = mission.next_task()

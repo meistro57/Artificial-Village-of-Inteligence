@@ -29,3 +29,10 @@ class Mission:
     def get_remaining_tasks(self) -> List[str]:
         """Return a copy of the remaining tasks."""
         return list(self.tasks)
+
+    def reset(self, tasks: Optional[List[str]] | None = None) -> None:
+        """Reset the mission with optional new tasks."""
+        if tasks is None:
+            tasks = [t for t, _ in self.completed] + self.tasks
+        self.tasks = list(tasks)
+        self.completed.clear()

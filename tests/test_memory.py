@@ -21,3 +21,13 @@ def test_delete_and_keys(tmp_path):
     assert memory.get("a") is None
     assert set(memory.keys()) == {"b"}
     memory.close()
+
+
+def test_clear(tmp_path):
+    db_path = tmp_path / "test.db"
+    memory = Memory(db_path)
+    memory.store("x", "1")
+    memory.store("y", "2")
+    memory.clear()
+    assert memory.keys() == []
+    memory.close()
