@@ -19,6 +19,14 @@ class Agent:
         self.memory = memory
         self.verbose = False
 
+    def set_verbose(self, verbose: bool) -> None:
+        """Enable or disable verbose debug output."""
+        self.verbose = verbose
+
+    def describe(self) -> str:
+        """Return a short description of the agent."""
+        return f"{self.name} ({self.id})"
+
     def _debug(self, message: str) -> None:
         if self.verbose:
             init(autoreset=True)

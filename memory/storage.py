@@ -34,5 +34,17 @@ class Memory:
         row = cur.fetchone()
         return row[0] if row else None
 
+    def delete(self, key: str) -> None:
+        """Remove a value from memory if it exists."""
+        cur = self.conn.cursor()
+        cur.execute("DELETE FROM memory WHERE key = ?", (key,))
+        self.conn.commit()
+
+    def keys(self) -> list[str]:
+        """Return a list of all stored keys."""
+        cur = self.conn.cursor()
+        cur.execute("SELECT key FROM memory")
+        return [row[0] for row in cur.fetchall()]
+
     def close(self) -> None:
         self.conn.close()
