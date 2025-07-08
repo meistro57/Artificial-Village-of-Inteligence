@@ -21,6 +21,8 @@ This is the foundation of a sandbox-style ecosystem for intelligent agents. We�
 - 📚 Local knowledge base + self-learning loop
 - ⚙️ Event-driven behaviors, mission triggers, and growth protocols
 - 🧩 Plugin-ready system to add roles, logic, and behavior profiles
+- 🛡️ Guardian failsafe blocks unsafe tasks
+- 🌐 Ollama usage falls back gracefully when offline
 
 ## 🚀 Goals
 
@@ -74,6 +76,12 @@ bash install.sh
 
    ```bash
    python auto_run.py -v
+   ```
+
+6. Load plugin agents using `--plugin-package`:
+
+   ```bash
+   python main.py --plugin-package plugins.agents
    ```
 
    This script runs missions in an endless loop, creating a new set of tasks on

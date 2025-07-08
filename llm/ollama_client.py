@@ -3,6 +3,15 @@
 import os
 import ollama
 
+
+def is_ollama_available() -> bool:
+    """Return True if the Ollama server is reachable."""
+    try:
+        ollama.list_models()
+        return True
+    except Exception:
+        return False
+
 DEFAULT_MODEL = os.getenv("OLLAMA_MODEL", "llama3")
 
 
@@ -19,6 +28,8 @@ def generate_response(prompt: str, model: str | None = None) -> str:
     """
     if model is None:
         model = DEFAULT_MODEL
+    if not is_ollama_available():
+        return "[ollama offline]"
     try:
         response = ollama.chat(model=model, messages=[{"role": "user", "content": prompt}])
         return response.get("message", {}).get("content", "").strip()

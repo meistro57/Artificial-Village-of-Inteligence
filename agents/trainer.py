@@ -17,7 +17,10 @@ class TrainerAgent(Agent):
         self.kb = kb
 
     def perform_task(self, task: str):
-        self.kb.add_fact(task, f"taught by {self.name}")
-        result = f"Trainer {self.name} taught '{task}'"
+        if self.kb.query(task):
+            result = f"Trainer {self.name} already knew '{task}'"
+        else:
+            self.kb.add_fact(task, f"taught by {self.name}")
+            result = f"Trainer {self.name} taught '{task}'"
         self.remember(task, result)
         return result
